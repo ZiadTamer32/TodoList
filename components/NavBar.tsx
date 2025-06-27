@@ -4,7 +4,7 @@ import AddFormTodo from "./AddFormTodo";
 
 function NavBar({ userId }: { userId: string | null }) {
   return (
-    <nav className="flex items-center justify-between p-4">
+    <nav className="flex items-center justify-between py-4">
       <SignedIn>
         <UserButton />
       </SignedIn>

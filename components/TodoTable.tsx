@@ -18,8 +18,8 @@ function TodoTable({ todos }: { todos: tableSchemaType[] }) {
       <TableCaption>A list of your recent todos.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead>Id</TableHead>
           <TableHead>Title</TableHead>
+          <TableHead>Description</TableHead>
           <TableHead>Completed</TableHead>
           <TableHead className="text-right">Actions</TableHead>
         </TableRow>
@@ -27,13 +27,13 @@ function TodoTable({ todos }: { todos: tableSchemaType[] }) {
       <TableBody>
         {todos.map((todo) => (
           <TableRow key={todo?.id}>
-            <TableCell className="font-medium">{todo?.id}</TableCell>
-            <TableCell>{todo?.title}</TableCell>
+            <TableCell className="font-medium">{todo?.title}</TableCell>
+            <TableCell>{todo?.body}</TableCell>
             <TableCell>
               {todo?.completed ? (
                 <Badge variant="secondary">Completed</Badge>
               ) : (
-                <Badge>UnCompleted</Badge>
+                <Badge>Uncompleted</Badge>
               )}
             </TableCell>
             <TableCell className="text-right">
